@@ -17,7 +17,7 @@ Before starting, ensure you have the following installed on your machine:
 Open your terminal and run:
 ```bash
 git clone <your-repo-url>
-cd design-pattern-playground
+cd upskill
 ```
 
 ### 2. Install Dependencies

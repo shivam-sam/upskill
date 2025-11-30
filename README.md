@@ -1,4 +1,4 @@
-# Design Pattern Playground - Interactive Tutorial
+# Let's Upskill - Interactive Tutorial
 
 An interactive web application to master Software Design Patterns, SOLID Principles, and Software Architecture styles with live visual demos.
 

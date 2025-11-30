@@ -1,5 +1,6 @@
 {
-  "name": "design-pattern-playground",
+  "name": "swe-upskill-playground",
+  "homepage": "https://shivam-sam.github.io/upskill/",
   "private": true,
   "version": "1.0.0",
   "type": "module",

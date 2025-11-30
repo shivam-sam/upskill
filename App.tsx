@@ -44,8 +44,6 @@ import {
   DddDemo
 } from './components/demos/ArchitectureDemos';
 
-import AITutor from './components/AITutor';
-
 
 const PlaceholderDemo: React.FC<{ title: string }> = ({ title }) => (
   <div className="flex flex-col items-center justify-center min-h-[300px] bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 text-slate-400 p-8 text-center">
@@ -483,9 +481,6 @@ const App: React.FC = () => {
           </div>
         )}
       </main>
-
-      {/* AITutor Overlay */}
-      {currentData && <AITutor currentPatternName={currentData.title} />}
       
       <style>{`
         .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }

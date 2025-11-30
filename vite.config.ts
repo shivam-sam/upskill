@@ -7,6 +7,6 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     // Base path is important for GitHub Pages (usually /repo-name/)
     // When running locally it falls back to '/'
-    base: './', 
+    base: '/upskill', 
   };
 });

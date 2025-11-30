@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { PATTERNS } from './data';
 import { PatternType, PatternCategory, SectionType } from './types';
-import AITutor from './components/AITutor';
 import CodeViewer from './components/CodeViewer';
 
 // Demos
@@ -399,18 +398,6 @@ const App: React.FC = () => {
                       </section>
                     )}
 
-                    {/* TECHNICAL DEFINITION SECTION */}
-                    {currentData.technicalDefinition && (
-                      <section>
-                         <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                            <span>🎓</span> Technical Definition
-                         </h2>
-                         <div className="bg-slate-100 border-l-4 border-indigo-500 p-6 rounded-r-xl italic text-slate-700 leading-relaxed font-serif text-lg">
-                            "{currentData.technicalDefinition}"
-                         </div>
-                      </section>
-                    )}
-
                     {/* DEMO SECTION */}
                     <section className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden ring-1 ring-slate-100">
                       <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex justify-between items-center">
@@ -423,6 +410,18 @@ const App: React.FC = () => {
                           {renderDemo()}
                       </div>
                     </section>
+
+                    {/* TECHNICAL DEFINITION SECTION */}
+                    {currentData.technicalDefinition && (
+                      <section>
+                         <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                            <span>🎓</span> Technical Definition
+                         </h2>
+                         <div className="bg-slate-100 border-l-4 border-indigo-500 p-6 rounded-r-xl italic text-slate-700 leading-relaxed font-serif text-lg">
+                            "{currentData.technicalDefinition}"
+                         </div>
+                      </section>
+                    )}
 
                     {/* CODE SECTION (Replaces UML) */}
                     {currentData.code && (
@@ -459,8 +458,6 @@ const App: React.FC = () => {
         )}
       </main>
       
-      <AITutor currentPatternName={currentData?.title || 'Software Engineering'} />
-
       <style>{`
         .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }

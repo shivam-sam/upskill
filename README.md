@@ -1,20 +1,69 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Design Pattern Playground - Interactive Tutorial
 
-# Run and deploy your AI Studio app
+An interactive web application to master Software Design Patterns, SOLID Principles, and Software Architecture styles with live visual demos.
 
-This contains everything you need to run your app locally.
+## Prerequisites
 
-View your app in AI Studio: https://ai.studio/apps/drive/1eYR8CW-lDt2ibwe29DF4LAmlltGfO_gX
+Before starting, ensure you have the following installed on your machine:
 
-## Run Locally
+1.  **Node.js** (v18 or higher) - [Download Here](https://nodejs.org/)
+2.  **Git** - [Download Here](https://git-scm.com/)
 
-**Prerequisites:**  Node.js
+---
 
+## 🚀 How to Run Locally (Terminal)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 1. Clone the Repository
+Open your terminal and run:
+```bash
+git clone <your-repo-url>
+cd design-pattern-playground
+```
+
+### 2. Install Dependencies
+Install the required node modules:
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+```bash
+npm run dev
+```
+Open your browser and navigate to `http://localhost:5173`.
+
+---
+
+## 🌐 How to Host on GitHub Pages
+
+You can host this application for free using GitHub Pages.
+
+### 1. Prepare `package.json`
+The `package.json` included in this project is already configured. 
+
+### 2. Push Code to GitHub
+Ensure your code is pushed to a repository on GitHub.
+
+```bash
+git add .
+git commit -m "Ready for deployment"
+git push origin main
+```
+
+### 3. Deploy
+Run the deployment script. This will build your app and push the `dist` folder to a `gh-pages` branch on your repository.
+
+```bash
+npm run deploy
+```
+
+*Note: You may be asked to log in to GitHub if you haven't already.*
+
+### 4. Enable GitHub Pages
+1.  Go to your repository on GitHub.
+2.  Click **Settings** > **Pages** (on the left sidebar).
+3.  Under **Build and deployment**, ensure **Source** is set to `Deploy from a branch`.
+4.  Set the **Branch** to `gh-pages` and folder to `/ (root)`.
+5.  Click **Save**.
+
+Your site will be live at `https://<your-username>.github.io/<repo-name>/` in a few minutes!

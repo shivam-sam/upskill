@@ -10,6 +10,7 @@ export const PATTERNS: Record<PatternType, PatternData> = {
     category: PatternCategory.CREATIONAL,
     shortDescription: "Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.",
     concept: "Imagine a logistics company. Initially, you only have trucks. Later, you add ships. A 'Factory' handles the creation logic. You just ask for a 'Vehicle' to deliver 'Cargo', and the factory decides whether to give you a Truck or a Ship based on the route.",
+    technicalDefinition: "Defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.",
     whyUseIt: [
       "When you don't know beforehand the exact types and dependencies of the objects your code should work with.",
       "To provide users of your library or framework with a way to extend its internal components.",
@@ -201,6 +202,7 @@ int main() {
     category: PatternCategory.CREATIONAL,
     shortDescription: "Lets you produce families of related objects without specifying their concrete classes.",
     concept: "Think of a furniture shop. You need a sofa, a chair, and a coffee table. An Abstract Factory ensures that if you choose the 'Modern' style, you get a Modern Sofa, Modern Chair, and Modern Table. If you choose 'Victorian', you get the full Victorian set. You don't mix and match accidentally.",
+    technicalDefinition: "Provides an interface for creating families of related or dependent objects without specifying their concrete classes.",
     whyUseIt: [
       "When your code needs to work with various families of related products.",
       "To enforce consistency among products.",
@@ -405,6 +407,7 @@ int main() {
     category: PatternCategory.CREATIONAL,
     shortDescription: "Lets you construct complex objects step by step. The same construction process can produce different types and representations of an object.",
     concept: "Ordering a custom burger. You don't just say 'Burger'. You say: Bun type? Sesame. Patties? Two. Cheese? Cheddar. Sauce? BBQ. The 'Builder' takes these individual steps and assembles the final complex object (the custom burger) tailored to your choices.",
+    technicalDefinition: "Separates the construction of a complex object from its representation so that the same construction process can create different representations.",
     whyUseIt: [
       "To get rid of a 'telescoping constructor' (constructors with 10 optional parameters).",
       "When you want your code to be able to create different representations of some product.",
@@ -625,6 +628,7 @@ int main() {
     category: PatternCategory.CREATIONAL,
     shortDescription: "Lets you copy existing objects without making your code dependent on their classes.",
     concept: "Cell division (Mitosis). A cell doesn't ask a factory to build a new cell from scratch. Instead, it copies itself. The new cell is an exact clone of the prototype. Useful when creating a new object from scratch is expensive or complicated.",
+    technicalDefinition: "Specifies the kinds of objects to create using a prototypical instance, and creates new objects by copying this prototype.",
     whyUseIt: [
       "When your code shouldn't depend on the concrete classes of objects that you need to copy.",
       "When creating an object from scratch is resource-intensive (e.g., database calls).",
@@ -781,6 +785,7 @@ int main() {
     category: PatternCategory.CREATIONAL,
     shortDescription: "Lets you ensure that a class has only one instance, while providing a global access point to this instance.",
     concept: "The President of a country. There can only be one active president at a time. Whenever anyone refers to 'The President', they are referring to that same single person. The system prevents multiple people from holding the title simultaneously.",
+    technicalDefinition: "Ensures a class has only one instance and provides a global point of access to it.",
     whyUseIt: [
       "When a class in your program should have just a single instance available to all clients (e.g., a database connection shared by all parts of the app).",
       "To control access to a shared resource.",
@@ -907,6 +912,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Allows objects with incompatible interfaces to collaborate.",
     concept: "A travel power plug adapter. Your laptop plug (Client) doesn't fit into the foreign wall socket (Service). The adapter sits in the middle, translating the shape of your plug into the shape of the socket, allowing electricity to flow.",
+    technicalDefinition: "Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.",
     whyUseIt: [
       "When you want to use an existing class, but its interface isn't compatible with the rest of your code.",
       "When you want to reuse several existing subclasses that lack some common functionality that can't be added to the superclass."
@@ -1038,6 +1044,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently.",
     concept: "A remote control (Abstraction) and a TV (Implementation). You can have a basic remote or a fancy remote. You can have a Sony TV or a Samsung TV. The remote doesn't need to know the inner details of the TV brand; it just sends signals. You can develop new remotes without changing TVs, and vice versa.",
+    technicalDefinition: "Decouples an abstraction from its implementation so that the two can vary independently.",
     whyUseIt: [
       "When you want to divide and organize a monolithic class that has several variants of functionality.",
       "To extend a class in several orthogonal (independent) dimensions.",
@@ -1228,6 +1235,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Lets you compose objects into tree structures and then work with these structures as if they were individual objects.",
     concept: "A file system structure. A folder can contain files or other folders. If you want to know the 'size' of a folder, you don't care if it contains a single file or a nested tree of folders. You just call `getSize()` and it recursively calculates the total. The client treats files and folders uniformly.",
+    technicalDefinition: "Composes objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.",
     whyUseIt: [
       "When you need to implement a tree-like object structure.",
       "When you want the client code to treat simple and complex elements uniformly."
@@ -1399,6 +1407,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.",
     concept: "Wearing clothes. You (the Object) are the same person whether you're naked or dressed. But if it's cold, you put on a sweater (Decorator). If it's raining, you put a raincoat over the sweater. You are 'decorating' yourself with layers that add functionality (warmth, dryness) without changing who you are.",
+    technicalDefinition: "Attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.",
     whyUseIt: [
       "When you need to assign extra behaviors to objects at runtime without breaking the code that uses these objects.",
       "When it's awkward or not possible to extend a class's behavior using inheritance."
@@ -1540,6 +1549,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Provides a simplified interface to a library, a framework, or any other complex set of classes.",
     concept: "A home theater system remote. To watch a movie, you might need to turn on the TV, set the input, turn on the speakers, set the volume, turn on the DVD player, and press play. A Facade is a single button 'Watch Movie' that does all of this for you behind the scenes, hiding the complexity.",
+    technicalDefinition: "Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.",
     whyUseIt: [
       "When you need to have a limited but straightforward interface to a complex subsystem.",
       "When you want to structure a subsystem into layers."
@@ -1670,6 +1680,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.",
     concept: "A forest in a video game. Drawing 1 million unique trees would crash the game. Instead, you create one 'Tree Type' object (green texture, pine shape) and reuse it 1 million times, only changing the position (x, y) for each instance. The heavy data is shared; the unique data is lightweight.",
+    technicalDefinition: "Uses sharing to support large numbers of fine-grained objects efficiently.",
     whyUseIt: [
       "When your program needs to spawn a huge number of similar objects.",
       "When your app runs out of RAM due to object overhead."
@@ -1840,6 +1851,7 @@ int main() {
     category: PatternCategory.STRUCTURAL,
     shortDescription: "Lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.",
     concept: "A credit card. It is a proxy for the cash in your bank account. You can use it to pay, but the bank (the real object) checks if you have funds before approving. It acts as a gateway and control mechanism without you needing to carry the actual cash bundle.",
+    technicalDefinition: "Provides a surrogate or placeholder for another object to control access to it.",
     whyUseIt: [
       "Lazy initialization (virtual proxy).",
       "Access control (protection proxy).",
@@ -1978,6 +1990,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.",
     concept: "Tech support. You call the help desk (Level 1). If they can't fix it, they pass you to a specialist (Level 2). If it's a bug, it goes to a developer (Level 3). The request travels up the chain until someone handles it.",
+    technicalDefinition: "Avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chains the receiving objects and passes the request along the chain until an object handles it.",
     whyUseIt: [
       "When your program is expected to process different kinds of requests in various ways, but the exact types of requests and their sequences are unknown beforehand.",
       "When it's essential to execute several handlers in a specific order."
@@ -2140,6 +2153,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request's execution, and support undoable operations.",
     concept: "A Text Editor with Undo/Redo. Every time you type a character or make text bold, the editor doesn't just execute the logic instantly; it wraps that action in a Command object (e.g., 'TypeCommand', 'FormatCommand') and pushes it onto a history stack. When you hit Ctrl+Z (Undo), the editor pops the last command and calls its 'undo()' method to reverse the change. This turns actions into objects.",
+    technicalDefinition: "Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.",
     whyUseIt: [
       "When you want to parameterize objects with operations.",
       "When you need to queue operations, schedule their execution, or execute them remotely.",
@@ -2307,6 +2321,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.",
     concept: "Translating Morse code. You have a specific set of rules (grammar) where dots and dashes map to letters. The Interpreter pattern defines these rules so a sentence '... --- ...' can be interpreted into 'SOS'. It's about building a mini-language processor.",
+    technicalDefinition: "Given a language, defines a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.",
     whyUseIt: [
       "When you have a simple grammar to process.",
       "When efficiency is not a critical concern (as it can be slow).",
@@ -2420,6 +2435,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).",
     concept: "A tour guide. You are at a museum (the Collection). You don't know the layout. The tour guide (Iterator) leads you to the 'next' exhibit, then the 'next', ensuring you see everything without you needing to know the map of the building.",
+    technicalDefinition: "Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.",
     whyUseIt: [
       "When your collection has a complex data structure under the hood, but you want to hide its complexity from clients.",
       "When you want to reduce duplication of the traversal code across your app.",
@@ -2573,6 +2589,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.",
     concept: "Air Traffic Control. Planes (Components) don't talk to each other to decide who lands first. They talk to the Tower (Mediator). The Tower tells Plane A to wait and Plane B to land. This prevents a chaotic mesh of communication and crashes.",
+    technicalDefinition: "Defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.",
     whyUseIt: [
       "When it's hard to change some of the classes because they are tightly coupled to a bunch of other classes.",
       "When you can't reuse a component in a different program because it's too dependent on other components."
@@ -2681,6 +2698,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Lets you save and restore the previous state of an object without revealing the details of its implementation.",
     concept: "Save points in a video game. Before a boss fight, you save your game. The save file (Memento) holds your health, inventory, and location. If you die, you reload the save file to restore that exact state. The game system stores the file but doesn't peek inside it.",
+    technicalDefinition: "Without violating encapsulation, captures and externalizes an object's internal state so that the object can be restored to this state later.",
     whyUseIt: [
       "When you want to produce snapshots of the object's state to be able to restore a previous state of the object.",
       "When direct access to the object's fields/getters/setters violates its encapsulation."
@@ -2812,6 +2830,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Notify multiple objects about events happening to the object they're observing.",
     concept: "Imagine a YouTuber (Subject) and their Subscribers (Observers). When the YouTuber uploads a video, all subscribers get a notification automatically. They don't have to check the channel every 5 minutes.",
+    technicalDefinition: "Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.",
     whyUseIt: [
       "When a change to one object requires changing others, and you don't know how many objects need to be changed.",
       "To establish a one-to-many dependency between objects.",
@@ -2946,6 +2965,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.",
     concept: "Your smartphone. When it's 'Unlocked', pressing the volume button changes the ringer volume. When it's 'Locked', pressing the volume button might light up the screen or do nothing. The phone is the same object, but its behavior changes completely based on its current state.",
+    technicalDefinition: "Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.",
     whyUseIt: [
       "When you have an object that behaves differently depending on its current state.",
       "When you have a massive switch-case statement based on state variables.",
@@ -3079,6 +3099,7 @@ public:
     shortDescription: "Define a family of algorithms, put each in a separate class, and make their objects interchangeable.",
     concept: "Navigation App. The app can calculate a route from A to B. It can use different algorithms (strategies) depending on the transport mode: Driving, Walking, or Public Transport. The 'Navigator' class delegates the calculation to the specific strategy selected by the user. The destination is the same, but the path, time, and cost differ.",
     analogy: "Getting to the airport. You can take a taxi (RoadStrategy), take a bus (PublicTransportStrategy), or walk (WalkingStrategy). The goal is the same, but the strategy defines the trade-offs (Speed vs. Cost vs. Effort).",
+    technicalDefinition: "Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.",
     whyUseIt: [
       "When you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.",
       "To isolate the business logic of a class from the implementation details of algorithms.",
@@ -3210,6 +3231,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.",
     concept: "Making Tea or Coffee. The general steps are the same: 1. Boil Water, 2. Brew, 3. Pour in Cup, 4. Add Condiments. A 'Beverage' class defines this flow. 'Tea' subclasses provide specific brewing (steeping) and condiments (lemon). 'Coffee' subclasses provide dripping and sugar/milk. The structure remains identical.",
+    technicalDefinition: "Defines the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.",
     whyUseIt: [
       "When you want to let clients extend only particular steps of an algorithm, but not the whole algorithm or its structure.",
       "When you have several classes that contain almost identical algorithms with some minor differences."
@@ -3328,6 +3350,7 @@ int main() {
     category: PatternCategory.BEHAVIORAL,
     shortDescription: "Lets you separate algorithms from the objects on which they operate.",
     concept: "A Zoo. You have different animals (Lion, Dolphin). You want to perform different operations like 'Health Check' (by a Vet) or 'Feed' (by a Feeder). Instead of adding `checkHealth()` and `feed()` methods to the Animal classes (polluting them), you create `VetVisitor` and `FeederVisitor`. The Visitor knows how to handle each animal type.",
+    technicalDefinition: "Represents an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.",
     whyUseIt: [
       "When you need to perform an operation on all elements of a complex object structure (e.g., an object tree).",
       "When you want to clean up the business logic of auxiliary behaviors.",

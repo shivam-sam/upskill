@@ -1,4 +1,4 @@
-# Let's Upskill - Interactive Tutorial
+# Design Pattern Playground - Interactive Tutorial
 
 An interactive web application to master Software Design Patterns, SOLID Principles, and Software Architecture styles with live visual demos.
 
@@ -17,7 +17,7 @@ Before starting, ensure you have the following installed on your machine:
 Open your terminal and run:
 ```bash
 git clone <your-repo-url>
-cd upskill
+cd design-pattern-playground
 ```
 
 ### 2. Install Dependencies

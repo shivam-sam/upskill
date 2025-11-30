@@ -1,6 +1,4 @@
-
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PATTERNS } from './data';
 import { PatternType, PatternCategory, SectionType } from './types';
 import CodeViewer from './components/CodeViewer';
@@ -46,6 +44,8 @@ import {
   DddDemo
 } from './components/demos/ArchitectureDemos';
 
+import AITutor from './components/AITutor';
+
 
 const PlaceholderDemo: React.FC<{ title: string }> = ({ title }) => (
   <div className="flex flex-col items-center justify-center min-h-[300px] bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 text-slate-400 p-8 text-center">
@@ -55,9 +55,23 @@ const PlaceholderDemo: React.FC<{ title: string }> = ({ title }) => (
   </div>
 );
 
+const sysConfig = {
+  _a: "U2hpdmFtIFNpbmdoYWw=",
+  _l: "aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3NoaXZhbS1zaW5naGFsLTY1YWI2OTExOS8=",
+  d: (s: string) => { try { return atob(s); } catch (e) { return "Unknown"; } }
+};
+
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<SectionType | null>(null);
   const [activeTopic, setActiveTopic] = useState<PatternType | null>(null);
+
+  // Professional Console Signature
+  useEffect(() => {
+    const author = sysConfig.d(sysConfig._a);
+    const link = sysConfig.d(sysConfig._l);
+    console.log(`%c Crafted by ${author} `, "background: #0f172a; color: #818cf8; font-size: 14px; padding: 4px; border-radius: 4px; font-weight: bold;");
+    console.log(`%c Connect: ${link} `, "background: #fff; color: #0f172a; font-size: 12px; padding: 2px; border-radius: 2px;");
+  }, []);
 
   const getSidebarData = () => {
     if (activeSection === SectionType.DESIGN_PATTERNS) {
@@ -240,6 +254,18 @@ const App: React.FC = () => {
               </div>
             </div>
           </nav>
+          
+          {/* Creator Attribution (Obfuscated) */}
+          <div className="p-4 border-t border-slate-800 text-[10px] text-slate-600 flex justify-center">
+             <a 
+               href={sysConfig.d(sysConfig._l)} 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="hover:text-indigo-400 transition-colors cursor-pointer"
+             >
+               Crafted by {sysConfig.d(sysConfig._a)}
+             </a>
+          </div>
         </aside>
       )}
 
@@ -457,6 +483,9 @@ const App: React.FC = () => {
           </div>
         )}
       </main>
+
+      {/* AITutor Overlay */}
+      {currentData && <AITutor currentPatternName={currentData.title} />}
       
       <style>{`
         .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }

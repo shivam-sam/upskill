@@ -44,7 +44,7 @@ const TemplateMethodDemo: React.FC = () => {
   return (
     <div className="flex flex-col gap-6 w-full">
        <div className="bg-indigo-50 border border-indigo-100 p-4 rounded-lg text-sm text-indigo-900">
-         <strong>Analogy:</strong> Making Tea and Coffee follows the same recipe structure (Boil -&gt; Brew -&gt; Pour -&gt; Condiments). The <strong>Template Method</strong> defines this flow in a base class, while subclasses provide specific implementations for brewing and condiments.
+         <strong>Analogy:</strong> Making Tea and Coffee follows the same recipe structure (Boil -> Brew -> Pour -> Condiments). The <strong>Template Method</strong> defines this flow in a base class, while subclasses provide specific implementations for brewing and condiments.
        </div>
 
        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
